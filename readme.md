@@ -3,8 +3,8 @@ Se debe importar el archivo **bdd_aiudo.sql** en phpmyadmin (Este archivo esta g
 **Este proyecto usa la versión php 8.0.10**
 Es necesario ejecutar el comando **composer update**.(**Sobre la carpeta que contiene el proyecto**)
 Una vez hayamos echo esto e importado la base de datos podermos ejecutar el comando **symfony serve** (**Sobre la carpeta que contiene el proyecto**)
-Cuando el proyecto este arrancado debemos importar el archivo **.json** (Guardado en la raíz) en el sotfware **POSTMAN**, en el están guardadas todas las rutas necesarias para comprobar que todo funciona correctamente.
-**Antes de empezar necesitamos crear un nuevo Enviroments en Postman con la variable credencial, está se obtendrá cuando el cliente haga login (La tenemos que copiar en initial value)**
+Cuando el proyecto este arrancado debemos importar los archivos **.json** (Guardado en la raíz) en el sotfware **POSTMAN**, en el están guardadas todas las rutas necesarias para comprobar que todo funciona correctamente y el enviroment para crear la sesión.
+**La credencial para la sesión se obtendrá cuando el cliente haga login (La tenemos que copiar en initial value, en el sotware postman (enviroments) y activar el enviroment)**
 
 # Información sobre el proyecto
 Esta API REST simula un sistema bancario al que solo pueden acceder usuarios logeados.
