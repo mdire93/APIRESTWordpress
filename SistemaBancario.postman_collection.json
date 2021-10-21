@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "abcb9d95-7d60-4918-a7cc-1793be28ee38",
+		"name": "Sistema Bancario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "{{authToken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "usuario",
+							"value": "pep",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "pass",
+							"value": "admin93",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/logearse?usuario=mdire&pass=admin93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"logearse"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "mdire"
+						},
+						{
+							"key": "pass",
+							"value": "admin93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cerrar_sesion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/logout?credencial={{credencial}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"logout"
+					],
+					"query": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mis_cuentas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver_historial_pagos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/verpagos/1?credencial={{credencial}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"verpagos",
+						"1"
+					],
+					"query": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver_prestamos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/prestamos?credencial={{credencial}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"prestamos"
+					],
+					"query": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "solicitar_prestamo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_cuenta",
+							"value": "1",
+							"description": "id de la cuenta en la que se va a ingresar el prestamo ",
+							"type": "text"
+						},
+						{
+							"key": "credencial",
+							"value": "{{credencial}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/solicitar_prestamo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"solicitar_prestamo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver_mis_prestamos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/mis_prestamos?credencial={{credencial}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"mis_prestamos"
+					],
+					"query": [
+						{
+							"key": "credencial",
+							"value": "{{credencial}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolver_prestamo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_cuenta",
+							"value": "1",
+							"description": "Id de la cuenta con la que se va a realizar el pago ",
+							"type": "text"
+						},
+						{
+							"key": "credencial",
+							"value": "{{credencial}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/devolver/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"devolver",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recuperar_pass",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_cliente",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pass",
+							"value": "admin93",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/recuperar_pass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"recuperar_pass"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

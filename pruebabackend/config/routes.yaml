@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+verpagos:
+    path: /verpagos/{id}
+    controller: App\Controller\DefaultController::verpagos
+solicitar_prestamo:
+    path: /solicitar_prestamo/{id}
+    controller: App\Controller\DefaultController::solicitar_prestamo
